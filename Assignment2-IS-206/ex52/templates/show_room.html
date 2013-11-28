@@ -1,0 +1,22 @@
+$def with (room)
+
+<h1 id="title">$room.name </h1>
+
+<div id="left-side">
+	<pre id="description">
+	$room.description
+	</pre>
+
+$if room.name == 'out':
+	<p><a href="/">Play Again?</a></p>
+$else:
+	<p>
+	<form action="/game" method="POST">
+		<input type="text" name="action" id="action" placeholder="Type your move here"> <input type="Submit" value="Go" id="submit">
+	</form>
+	</p>
+</div>
+
+<div id="picture">
+<img src="/static/$room.pic" class="pic">
+</div>
